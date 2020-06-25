@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Questions extends Model
+class Question extends Model
 {
     //for mass assignments
     protected $fillable = ["title", "body"];
