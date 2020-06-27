@@ -65,9 +65,9 @@ class QuestionsController extends Controller
      * @param  \App\Question  $questions
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $questions)
+    public function edit(Question $question)
     {
-        //
+        return view("questions.edit", compact('question'));
     }
 
     /**
@@ -77,9 +77,11 @@ class QuestionsController extends Controller
      * @param  \App\Question  $questions
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $questions)
+    public function update(AskQuestionRequest $request, Question $question)
     {
-        //
+        $question->update($request->all());
+
+        return redirect()->route("questions.index")->with("success", "Your question has been updated");
     }
 
     /**
