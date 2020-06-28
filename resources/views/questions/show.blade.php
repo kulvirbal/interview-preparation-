@@ -26,10 +26,10 @@
                             <a href="javascript:void(0);" class="vote-down off" title="This question is not useful">
                                 <i class="fa fa-caret-down fa-3x"></i> 
                             </a>
-                            <a href="javascript:void(0);" class="favorite" title="Click to mark is as favorite">
-                                <i class="fa fa-star fa-3x"></i>
-                                <span class="favorite-count">222</span>
+                            <a href="javascript:void(0);" class="favorite favorited" title="Click to mark is as favorite">
+                                <i class="fa fa-star fa-2x"></i>
                             </a>
+                            <span class="favorite-count">222</span>
                         </div>
                         <div class="media-body">
                             {!! $question->body_html !!}
@@ -64,6 +64,19 @@
                     <hr>
                     @foreach ($question->answers as $answer)
                         <div class="media">
+                            <div class="d-flex flex-column vote-controls">
+                                <a href="javascript:void(0);" class="vote-up" title="This answer is useful">
+                                    <i class="fa fa-caret-up fa-3x"></i>
+                                </a>
+                                <span class="votes-count">1234</span>
+                                <a href="javascript:void(0);" class="vote-down off" title="This answer is not useful">
+                                    <i class="fa fa-caret-down fa-3x"></i> 
+                                </a>
+                                <a href="javascript:void(0);" class="vote-accept mt-2" title="Mark this answer as best answer">
+                                    <i class="fa fa-check fa-2x"></i>
+                                </a>
+                                <span class="favorite-count">222</span>
+                            </div>
                             <div class="media-body">
                                 {!! $answer->body_html !!}
                                 <div class="float-right">
